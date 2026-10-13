@@ -1,9 +1,17 @@
+import type { ReactNode } from 'react'
 import PageHeader from './components/header/header'
 
-function App() {
+interface AppProps{
+  children: ReactNode
+}
+
+function App({children}:AppProps) {
   return (
     <>
-      <PageHeader />
+      <PageHeader/>
+      <main className="main-content">
+        {children}
+      </main>
     </>
   )
 }
