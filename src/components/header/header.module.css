@@ -24,11 +24,6 @@
   font-size: 18px;
 }
 
-.link{
-  text-decoration: none;
-  color: inherit;
-}
-
 .link:hover{
   color: var(--accent-color);
   opacity: 0.8;
