@@ -1,0 +1,43 @@
+:root {
+  --white-text: #fff;
+  --accent-color: #8C1C1C;
+  --bg-color: #000;
+  --bg-alt: #1e1e1e;
+  color: var(--bg-color);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--white-text);
+}
+
+h1,
+h2, 
+h3 {
+  font-family: "Sedgwick Ave", cursive;
+  color: var(--accent-color);
+}
+
+h1 {
+  font-size: 32px;
+  @media (max-width: 784px) {
+    font-size: 24px;
+  }
+}
+
+h2 {
+  font-size: 28px;
+  @media (max-width: 784px) {
+    font-size: 22px;
+  }
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
