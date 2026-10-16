@@ -1,4 +1,4 @@
-import SectionContainer from "../components/container/sectionContainer";
+import SectionContainer from "../components/container/SectionContainer";
 
 export default function HomePage(){
   return(

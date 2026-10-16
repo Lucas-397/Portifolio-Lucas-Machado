@@ -1,0 +1,9 @@
+.menuModal{
+  background-color: var(--bg-alt);
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  width: 100%;
+  height: max-content;
+  position: relative;
+  top: 60px;
+}
