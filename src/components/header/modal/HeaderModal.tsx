@@ -1,11 +1,7 @@
 import Row from "../../row/Row";
 import styles from './headerModal.module.css'
 
-interface HeaderModalProps{
-  display: boolean
-}
-
-export default function HeaderModal({display}:HeaderModalProps){
+export default function HeaderModal(){
   const modalLinks = [
     {
       title:'Meus Projetos',
@@ -18,7 +14,7 @@ export default function HeaderModal({display}:HeaderModalProps){
   ];
 
   return(
-     <div id='menu-mobile' className={styles.menuModal} style={{display: display? 'block':'none'}}>
+     <div id='menu-mobile' className={styles.menuModal}>
         {modalLinks.map((item, index) => {
           return <Row text={item.title} page={item.link} last={index == modalLinks.length-1}/>
         })}

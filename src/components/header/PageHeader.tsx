@@ -9,17 +9,15 @@ function PageHeader () {
   const [mobileMenuShow, setMobileMenuShow] = useState(false);
 
   function toggleMenu(){
-    const menu = document.getElementById('menu-mobile');
-    if(menu){
-      setMobileMenuShow(prev => !prev);//toggler de menu
-      console.log(mobileMenuShow);
+    setMobileMenuShow(prev => !prev);//toggler de menu
+    console.log(mobileMenuShow);
 
-      document.addEventListener('click', e =>{//fecha o menu caso clique fora do mesmo 
-        if(e.target !== menu){
-          setMobileMenuShow(false);//toggler de menu
-        }
-      }, {once:true})
-    }
+    document.addEventListener('click', () =>{//fecha o menu caso clique fora do mesmo 
+      const menu = document.getElementById('menu-mobile');
+      if(menu){
+        setMobileMenuShow(false);//toggler de menu
+      }
+    }, {once:true})
   }
 
   return (
@@ -44,7 +42,7 @@ function PageHeader () {
         </div>
         <div 
             onClick={(event) => {
-              event.stopPropagation(); 
+              event.stopPropagation() 
               toggleMenu();
             }} 
             className={styles.mobileSections}
@@ -53,7 +51,9 @@ function PageHeader () {
         </div>
       </div>
     </div>
-    <HeaderModal display={mobileMenuShow}/>
+    {mobileMenuShow && (
+      <HeaderModal />
+    )}
     </>
   );
 }
