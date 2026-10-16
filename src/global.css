@@ -52,3 +52,11 @@ a:hover{
   opacity: 0.8;
   cursor: pointer;
 }
+
+main {
+  position:relative;
+  top: 68px;
+  @media (max-width: 480px) {
+    top: 60px;
+  }
+}
