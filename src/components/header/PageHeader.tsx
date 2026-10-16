@@ -33,10 +33,10 @@ function PageHeader () {
           <a href="google.com" target='__blank' className={styles.link}>Meu Curriculo</a>
         </div>
         <div className={styles.iconSection}>
-          <a href='https://github.com/Lucas-397'>
+          <a target='__blank' href='https://github.com/Lucas-397'>
             <i className="bi bi-github"></i>  
           </a>
-          <a href='https://www.linkedin.com/in/dev-lucas-machado'>
+          <a target='__blank' href='https://www.linkedin.com/in/dev-lucas-machado'>
             <i className="bi bi-linkedin"></i>
           </a>
         </div>
