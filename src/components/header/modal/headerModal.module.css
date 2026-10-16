@@ -4,6 +4,6 @@
   border-bottom-right-radius: 16px;
   width: 100%;
   height: max-content;
-  position: relative;
+  position: fixed;
   top: 60px;
 }
