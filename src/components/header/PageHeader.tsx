@@ -1,34 +1,29 @@
+import { useState } from 'react';
 import styles from './header.module.css';
 import { Link } from 'react-router-dom';
+import HeaderModal from './modal/HeaderModal';
 
 
 function PageHeader () {
 
-  function expandMenu(){
+  const [mobileMenuShow, setMobileMenuShow] = useState(false);
+
+  function toggleMenu(){
     const menu = document.getElementById('menu-mobile');
     if(menu){
-      menu.style.display = 'block';
+      setMobileMenuShow(prev => !prev);//toggler de menu
+      console.log(mobileMenuShow);
 
-      document.addEventListener('click', e =>{
+      document.addEventListener('click', e =>{//fecha o menu caso clique fora do mesmo 
         if(e.target !== menu){
-          menu.style.display = 'none';
+          setMobileMenuShow(false);//toggler de menu
         }
-      });
+      }, {once:true})
     }
   }
 
-  const sections = [
-    {
-      title:'Meus Projetos',
-      href: ''
-    },
-    {
-      title:'Sobre Mim',
-      href: ''
-    }
-  ];
-
   return (
+    <>
     <div className={styles.header}>
       <div className={styles.content}>
         <div>
@@ -47,14 +42,19 @@ function PageHeader () {
             <i className="bi bi-linkedin"></i>
           </a>
         </div>
-        <div onClick={() => expandMenu} className={styles.mobileSections}>
+        <div 
+            onClick={(event) => {
+              event.stopPropagation(); 
+              toggleMenu();
+            }} 
+            className={styles.mobileSections}
+          >
           <i className="bi bi-list"></i>
         </div>
       </div>
-      <div id='menu-mobile'>
-        
-      </div>
     </div>
+    <HeaderModal display={mobileMenuShow}/>
+    </>
   );
 }
 
