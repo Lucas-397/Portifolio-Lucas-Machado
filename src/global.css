@@ -50,4 +50,5 @@ a {
 a:hover{
   color: var(--accent-color);
   opacity: 0.8;
+  cursor: pointer;
 }
