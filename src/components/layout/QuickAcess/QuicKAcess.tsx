@@ -3,15 +3,16 @@ import QuickAcessRow, { type QuickAcessRowType } from "./QuickAcessRow.tsx/Quick
 
 interface QuickAcessProps{
   content: QuickAcessRowType[];
+  altButtonText?: string
 }
 
-export default function QuickAcess({content}:QuickAcessProps){
+export default function QuickAcess({content, altButtonText}:QuickAcessProps){
   
   return(
     <SectionContainer color={"#fff"}>
       {content.map((rowContent)=>{
         return(
-          <QuickAcessRow data={rowContent}/>
+          <QuickAcessRow buttonText={altButtonText} data={rowContent}/>
         );
       })}
     </SectionContainer>

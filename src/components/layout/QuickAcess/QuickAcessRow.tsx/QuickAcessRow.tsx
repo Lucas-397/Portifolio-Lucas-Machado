@@ -7,15 +7,15 @@ export interface QuickAcessRowType{
   title: string;
   text: string;
   hash: string;
-  buttonText?:string
 }
 
 interface QuicKAcessRowProps{
   data: QuickAcessRowType;
   altStyle?: boolean
+  buttonText?: string
 }
 
-export default function QuicKAcessRow ({data, altStyle=false}:QuicKAcessRowProps){
+export default function QuicKAcessRow ({data, buttonText, altStyle=false}:QuicKAcessRowProps){
   const navigate = useNavigate();  
   
   return(
@@ -25,7 +25,7 @@ export default function QuicKAcessRow ({data, altStyle=false}:QuicKAcessRowProps
           <h2>{data.title}</h2>
           <p>{data.text}</p>
         </div>
-        <Button onclick={() => navigate(data.hash)} text={data.buttonText} ></Button>
+        <Button onclick={() => navigate(data.hash)} text={buttonText} ></Button>
       </div>
       <div onClick={() => navigate(data.hash)} className={styles.imgContainer}>
         {altStyle? 
@@ -33,7 +33,7 @@ export default function QuicKAcessRow ({data, altStyle=false}:QuicKAcessRowProps
         }
         <img src={data.img} alt="row-img" />
         <div className={altStyle? styles.altImgButton:styles.imgButton}>
-          <Button onclick={() => navigate(data.hash)} text={data.buttonText}/>:
+          <Button onclick={() => navigate(data.hash)} text={buttonText}/>:
         </div>
       </div>
     </div>
