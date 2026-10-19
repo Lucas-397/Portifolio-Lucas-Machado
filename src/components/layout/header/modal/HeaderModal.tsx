@@ -1,4 +1,4 @@
-import Row from "../../row/Row";
+import Row from '../../../ui/row/Row';
 import styles from './headerModal.module.css'
 
 export default function HeaderModal(){

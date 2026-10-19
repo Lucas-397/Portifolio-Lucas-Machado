@@ -3,7 +3,7 @@ import styles from './sectionContainer.module.css'
 
 interface sectionContainerProps{
   children: ReactNode;
-  color: string;
+  color?: string;
   bgImg?: string; //caminho para a imagem
 }
 
