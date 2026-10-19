@@ -27,6 +27,12 @@
   font-size: 18px;
 }
 
+.imgContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
 .imgButton{
   display: none;
   @media (max-width: 480px) {
@@ -40,5 +46,15 @@
 
 .altImgButton{
   display: none;
-  
+   @media (max-width: 480px) {
+    display: block;
+    text-align: center;;
+  }
+}
+
+.mobile {
+  display: none;
+  @media (max-width: 480px) {
+    display: block;
+  }
 }
