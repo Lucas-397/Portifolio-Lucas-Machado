@@ -1,11 +1,11 @@
 import style from './button.module.css'
 
 interface ButtonProps{
-  text: string;
   onclick: () => void;
+  text?: string;
 }
 
-export default function Button({text, onclick}:ButtonProps){
+export default function Button({text='Visualizar', onclick}:ButtonProps){
   return(
     <button className={style.button} onClick={() => onclick}>{text}</button>
   )
