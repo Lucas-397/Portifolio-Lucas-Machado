@@ -15,7 +15,7 @@ interface QuicKAcessRowProps{
   altStyle?: boolean
 }
 
-export default function QuicKAcessRow ({data, altStyle=true}:QuicKAcessRowProps){
+export default function QuicKAcessRow ({data, altStyle=false}:QuicKAcessRowProps){
   const navigate = useNavigate();  
   
   return(
@@ -27,7 +27,7 @@ export default function QuicKAcessRow ({data, altStyle=true}:QuicKAcessRowProps)
         </div>
         <Button onclick={() => navigate(data.hash)} text={data.buttonText} ></Button>
       </div>
-      <div className={styles.imgContainer}>
+      <div onClick={() => navigate(data.hash)} className={styles.imgContainer}>
         {altStyle? 
         <h2 className={styles.mobile}>{data.title}</h2>:''
         }
