@@ -14,9 +14,9 @@ export default function QuickAcess({content,  color, bgImg, altstyle=false}:Quic
   return(
     <SectionContainer bgImg={bgImg? bgImg:""} color={color? color:"#fff"}>
       <div className={styles.quickAcess}>
-        {content.map((rowContent)=>{
+        {content.map((rowContent, index)=>{
           return(
-            <QuickAcessRow altStyle={altstyle} data={rowContent}/>
+            <QuickAcessRow key={index} altStyle={altstyle} data={rowContent}/>
           );
         })}
       </div>
