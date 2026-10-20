@@ -4,17 +4,19 @@ import styles from  './QuickAcessRow.tsx/quickAccesRow.module.css';
 
 interface QuickAcessProps{
   content: QuickAcessRowType[];
-  altButtonText?: string
+  color?: string;
+  bgImg?: string
+  altstyle?: boolean
 }
 
-export default function QuickAcess({content, altButtonText}:QuickAcessProps){
+export default function QuickAcess({content,  color, bgImg, altstyle=false}:QuickAcessProps){
   
   return(
-    <SectionContainer color={"#fff"}>
+    <SectionContainer bgImg={bgImg? bgImg:""} color={color? color:"#fff"}>
       <div className={styles.quickAcess}>
         {content.map((rowContent)=>{
           return(
-            <QuickAcessRow buttonText={altButtonText} data={rowContent}/>
+            <QuickAcessRow altStyle={altstyle} data={rowContent}/>
           );
         })}
       </div>
