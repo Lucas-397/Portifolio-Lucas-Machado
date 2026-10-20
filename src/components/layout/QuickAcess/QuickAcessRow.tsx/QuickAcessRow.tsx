@@ -33,7 +33,7 @@ export default function QuicKAcessRow ({data, buttonText, altStyle=false}:QuicKA
         }
         <img src={data.img} alt="row-img" />
         <div className={altStyle? styles.altImgButton:styles.imgButton}>
-          <Button onclick={() => navigate(data.hash)} text={buttonText}/>:
+          <Button onclick={() => navigate(data.hash)} text={buttonText}/>
         </div>
       </div>
     </div>
