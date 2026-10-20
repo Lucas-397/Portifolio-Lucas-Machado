@@ -39,7 +39,7 @@ export default function SectionContainer({children, color, bgImg}: sectionContai
   }, []);
 
   return(
-    <div ref={containerRef} className={styles.container} style={bgImg? {backgroundImage:bgImg, backgroundColor:color}:{backgroundColor:color}}>
+    <div ref={containerRef} className={styles.container} style={bgImg && bgImg !== ""? {backgroundImage:bgImg, backgroundColor:color}:{backgroundColor:color}}>
       {children}
     </div>
   );
