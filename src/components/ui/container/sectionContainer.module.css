@@ -7,8 +7,8 @@
   }
 }
 
-/* 1. Estado inicial dos filhos (invisíveis e rebaixados) */
-.container > * {
+/* 1. Estado inicial dos NETOS (filhos dos filhos) */
+.container > * > * {
   opacity: 0;
   transform: translateY(40px);
   /* A transição suave acontece quando essas propriedades mudarem */
@@ -16,12 +16,12 @@
 }
 
 /* 2. Estado final quando o JS injetar a classe 'visible' */
-.container.visible > * {
+.container.visible > * > * {
   opacity: 1;
   transform: translateY(0);
 }
 
 /* 3. Efeito cascata padronizado com transition-delay */
-.container.visible > *:nth-child(1) { transition-delay: 0.3s; }
-.container.visible > *:nth-child(2) { transition-delay: 0.4s; }
-.container.visible > *:nth-child(3) { transition-delay: 0.5s; }
+.container.visible > * > *:nth-child(1) { transition-delay: 0.3s; }
+.container.visible > * > *:nth-child(2) { transition-delay: 0.6s; }
+.container.visible > * > *:nth-child(3) { transition-delay: 0.9s; }
