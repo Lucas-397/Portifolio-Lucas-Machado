@@ -1,8 +1,20 @@
+.quickAcess {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  @media  (max-width:480px) {
+      gap: 20px;
+  }
+}
+
 .container{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between !important;
   align-items: center;
-  justify-content: center;
+
+  @media (max-width: 480px) {
+    justify-content: center;
+  }
 }
 
 .leftContent{
@@ -30,25 +42,34 @@
 .imgContainer{
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 16px;
 }
 
-.imgButton{
+.imgWrap {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.imgContainer img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.imgButton,
+.altImgButton{
   display: none;
+
   @media (max-width: 480px) {
-    display: block;
+    display: flex;
+    justify-content: center;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-}
-
-.altImgButton{
-  display: none;
-   @media (max-width: 480px) {
-    display: block;
-    text-align: center;;
+    z-index: 1;
   }
 }
 
