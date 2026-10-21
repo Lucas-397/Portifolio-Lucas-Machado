@@ -1,18 +1,14 @@
-import SectionContainer from "../../ui/container/SectionContainer";
 import QuickAcessRow, { type QuickAcessRowType } from "./QuickAcessRow.tsx/QuickAcessRow";
 import styles from  './QuickAcessRow.tsx/quickAccesRow.module.css';
 
 interface QuickAcessProps{
   content: QuickAcessRowType[];
-  color?: string;
-  bgImg?: string
   altstyle?: boolean
 }
 
-export default function QuickAcess({content,  color, bgImg, altstyle=false}:QuickAcessProps){
+export default function QuickAcess({content, altstyle=false}:QuickAcessProps){
   
   return(
-    <SectionContainer bgImg={bgImg? bgImg:""} color={color? color:"#fff"}>
       <div className={styles.quickAcess}>
         {content.map((rowContent, index)=>{
           return(
@@ -20,6 +16,5 @@ export default function QuickAcess({content,  color, bgImg, altstyle=false}:Quic
           );
         })}
       </div>
-    </SectionContainer>
   );
 }
