@@ -1,5 +1,6 @@
 import QuickAcess from "../../layout/QuickAcess/QuicKAcess";
 import type { QuickAcessRowType } from "../../layout/QuickAcess/QuickAcessRow.tsx/QuickAcessRow";
+import SectionContainer from "../../ui/container/SectionContainer";
 
 export default function Diskets(){
   const content:QuickAcessRowType[] = [
@@ -17,5 +18,9 @@ export default function Diskets(){
     }
   ]
 
-  return <QuickAcess content={content}/>;
+  return (
+    <SectionContainer color="#fff" bgImg="/src/Assets/Img/texture.png">
+      <QuickAcess content={content}/>
+    </SectionContainer>
+  ); 
 }
