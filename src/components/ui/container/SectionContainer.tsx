@@ -7,9 +7,9 @@ interface sectionContainerProps{
   bgImg?: string; //caminho para a imagem
 }
 
-export default function SectionContainer({children, color, bgImg}: sectionContainerProps) {
+export default function SectionContainer({children, color, bgImg=""}: sectionContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
- 
+  console.log(bgImg)
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
@@ -39,7 +39,7 @@ export default function SectionContainer({children, color, bgImg}: sectionContai
   }, []);
 
   return(
-    <div ref={containerRef} className={styles.container} style={bgImg && bgImg !== ""? {backgroundImage:bgImg, backgroundColor:color}:{backgroundColor:color}}>
+    <div ref={containerRef} className={styles.container} style={{backgroundImage:`url(${bgImg})`, backgroundColor:color}}>
       {children}
     </div>
   );
