@@ -40,6 +40,10 @@ h2 {
 
 p {
   font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  @media (max-width: 784px) {
+    font-size: 18px;
+  }
 }
 
 a {
