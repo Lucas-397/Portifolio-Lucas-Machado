@@ -9,7 +9,6 @@ interface sectionContainerProps{
 
 export default function SectionContainer({children, color, bgImg=""}: sectionContainerProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  console.log(bgImg)
   useEffect(() => {
     const element = containerRef.current;
     if (!element) return;
