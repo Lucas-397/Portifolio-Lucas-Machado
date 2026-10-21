@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import QuickAcess from "../../layout/QuickAcess/QuicKAcess";
 import type { QuickAcessRowType } from "../../layout/QuickAcess/QuickAcessRow.tsx/QuickAcessRow";
 import SectionContainer from "../../ui/container/SectionContainer";
+import styles from './projects.module.css'
 
-export default function ProjectsSection (){
+interface ProjectsSectionProps{
+  currentProjectId?: string;//colocar aqui o id do projeto aberto para estilização especifica
+}
+
+export default function ProjectsSection ({currentProjectId=""}:ProjectsSectionProps){
   const [data, setData] = useState<QuickAcessRowType[]>([]);
 
   try{
@@ -15,14 +20,15 @@ export default function ProjectsSection (){
         if(response.ok){
           projectsData = await response.json();
           
-          const formatedData:QuickAcessRowType[] = projectsData.Projetos.map((projeto:any) =>(
-            {
-              img: `${projeto.img}`,
-              title: `${projeto.title}`,
-              text: `${projeto.description}`,
-              hash: `#projects=${projeto.id}`
-            }
-          ));
+          const formatedData:QuickAcessRowType[] = projectsData.Projetos.filter((projeto:any) => projeto.id !== currentProjectId)
+          .map((projeto:any) => (
+              {
+                img: `${projeto.img}`,
+                title: `${projeto.title}`,
+                text: `${projeto.description}`,
+                hash: `#projects=${projeto.id}`
+              }
+        ));
           setData(formatedData);
         }
     };
@@ -36,9 +42,13 @@ export default function ProjectsSection (){
 
   return (
     <SectionContainer color="#fff">
-    {data? 
-      <QuickAcess altstyle content={data} />:''
-    }
+      <div>
+        <h1 className={styles.textContainer}>{currentProjectId? "Mais Projetos":"Meus Projetos"}</h1>
+        <p className={styles.text}>Nesta sessão você pode conferir tudo sobre meus melhores projetos. Basta clicar no botão e começar sua viagem.</p>
+      </div>
+      {data? 
+        <QuickAcess altstyle content={data} />:''
+      }
     </SectionContainer>
   );
 }
