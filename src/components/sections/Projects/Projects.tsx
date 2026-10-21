@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import QuickAcess from "../../layout/QuickAcess/QuicKAcess";
 import type { QuickAcessRowType } from "../../layout/QuickAcess/QuickAcessRow.tsx/QuickAcessRow";
+import SectionContainer from "../../ui/container/SectionContainer";
 
 export default function ProjectsSection (){
   const [data, setData] = useState<QuickAcessRowType[]>([]);
@@ -34,10 +35,10 @@ export default function ProjectsSection (){
   }
 
   return (
-    <>
+    <SectionContainer color="#fff">
     {data? 
       <QuickAcess altstyle content={data} />:''
     }
-    </>
+    </SectionContainer>
   );
 }
