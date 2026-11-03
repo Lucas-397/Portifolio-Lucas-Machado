@@ -1,7 +1,6 @@
 import { useState } from "react";
 import SectionContainer from "../../ui/container/SectionContainer";
 import styles from './contact.module.css';
-import Button from "../../ui/Button/Button";
 
 interface ContactProps{
   color?: string
@@ -18,7 +17,7 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
   return (
     <SectionContainer color={color}>
       <h2 className={styles.title}>Contato</h2>
-      
+
         <div className={styles.contactBox}>
           <div className={styles.header}>
             <span></span>
