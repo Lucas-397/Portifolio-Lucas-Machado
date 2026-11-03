@@ -31,7 +31,7 @@ export default function QuicKAcessRow ({data, buttonText, altStyle=false}:QuicKA
         {altStyle? 
         <h2 className={styles.mobile}>{data.title}</h2>:''
         }
-        <div className={styles.imgWrap}>
+        <div className={styles.imgWrap} onClick={() => navigate(data.hash)} >
           <img src={data.img} alt="row-img" />
           <div id="altButton" className={altStyle? styles.altImgButton:styles.imgButton}>
             <Button onclick={() => navigate(data.hash)} text={buttonText}/>
