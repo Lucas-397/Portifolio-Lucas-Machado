@@ -1,0 +1,21 @@
+.title{
+  margin-bottom: 32px;
+}
+
+.contactContainer {
+  border-radius: 20px;
+  background-color: #131920;
+  width: 824px;
+  height: 400px;
+}
+
+.textBox {
+  background: transparent;
+  border: 0px;
+  margin-left: 30px;
+  margin-top: 16px;
+  color: var(--text-gray);
+  font-size: 18px;
+  width: 764px;
+  height: 300px;
+}
