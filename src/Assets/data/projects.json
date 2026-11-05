@@ -1,0 +1,70 @@
+{
+  "Projetos":[
+    {
+      "id":"ipsum",
+      "title": "App de Investimentos IPSUM",
+      "img": "/src/Assets/Img/Ipsum-album.png",
+      "type": "mobile",
+      "description": "Ipsum é um aplicativo mobile que simula um banco de investimentos.",
+      "expandedSections": {
+        "header": {
+          "description": "O App IPSUM consiste num projeto de front-end em React Native feito por mim e uma equipe de 2 outros desenvolvedores. O objetivo do projeto foi praticar as habilidades da equipe tanto no design quanto no desenvolvimento front-end. Ao longo do desenvolvimento fui responsável não só pelo desenvolvimento do front-end como também pela coordenação da equipe responsável pelo mesmo. Durante o desenvolvimento da aplicação buscamos construir uma interface coorporativa, moderna e usual. Voltado principalmente para um público mais jovem, o projeto possui X funcionalidades principais:  listagem de fundos, carteira de investimentos, simulação de investimento. //TODO: alterar este texto",
+          "img": "/src/Assets/Img/Ipsum-album.png"
+        },
+        "funcionalidades":[
+          {
+            "title":"listagem de fundos",
+            "text": "",
+            "img":""
+          },
+          {
+            "title":"carteira de investimentos",
+            "text": "",
+            "img":""
+          },
+          {
+            "title":"Simulação de rendimentos",
+            "text": "",
+            "img":""
+          }
+        ],
+        "desenvolvimento": {
+          "text":""
+        }
+      }
+    },
+    {
+      "id":"pomodoro",
+      "title": "App pomodoro Fokus",
+      "img": "/src/Assets/Img/fokus-album.png",
+      "type": "desktop",
+      "description": "Ipsum é um aplicativo mobile que simula um banco de investimentos.",
+      "expandedSections": {
+        "header": {
+          "description": "O App IPSUM consiste num projeto de front-end em React Native feito por mim e uma equipe de 2 outros desenvolvedores. O objetivo do projeto foi praticar as habilidades da equipe tanto no design quanto no desenvolvimento front-end. Ao longo do desenvolvimento fui responsável não só pelo desenvolvimento do front-end como também pela coordenação da equipe responsável pelo mesmo. Durante o desenvolvimento da aplicação buscamos construir uma interface coorporativa, moderna e usual. Voltado principalmente para um público mais jovem, o projeto possui X funcionalidades principais:  listagem de fundos, carteira de investimentos, simulação de investimento. //TODO: alterar este texto",
+          "img": "/src/Assets/Img/Ipsum-album.png"
+        },
+        "funcionalidades":[
+          {
+            "title":"listagem de fundos",
+            "text": "",
+            "img":""
+          },
+          {
+            "title":"carteira de investimentos",
+            "text": "",
+            "img":""
+          },
+          {
+            "title":"Simulação de rendimentos",
+            "text": "",
+            "img":""
+          }
+        ],
+        "desenvolvimento": {
+          "text":""
+        }
+      }
+    }
+  ]
+}

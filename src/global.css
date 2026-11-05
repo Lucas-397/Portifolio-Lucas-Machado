@@ -40,6 +40,10 @@ h2 {
 
 p {
   font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  @media (max-width: 784px) {
+    font-size: 18px;
+  }
 }
 
 a {
@@ -51,12 +55,4 @@ a:hover{
   color: var(--accent-color);
   opacity: 0.8;
   cursor: pointer;
-}
-
-main {
-  position:relative;
-  top: 68px;
-  @media (max-width: 480px) {
-    top: 60px;
-  }
 }

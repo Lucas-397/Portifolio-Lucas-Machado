@@ -1,0 +1,14 @@
+.button{
+  color: var(--white-text);
+  background: var(--accent-color);
+  padding: 8px 40px;
+  border-radius: 16px;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
+  border: none;
+}
+
+.button:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react'
-import PageHeader from './components/header/PageHeader'
+import PageHeader from './components/layout/header/PageHeader'
 
 interface AppProps{
   children: ReactNode

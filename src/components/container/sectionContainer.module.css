@@ -1,7 +1,0 @@
-.container{
-  padding: 40px clamp(1rem, 5vw, 5rem);
-  background-repeat: no-repeat;
-  @media (max-width: 480px) {
-    padding: 20px 16px;
-  }
-}
