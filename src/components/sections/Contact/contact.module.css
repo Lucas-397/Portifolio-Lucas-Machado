@@ -1,0 +1,115 @@
+.title{
+  margin-bottom: 32px;
+}
+
+.contactBox{
+  border-radius: 20px;
+  width: 844px;
+  background-color: #131920;
+  text-align: center;
+  padding: 12px 10px;
+  align-self: center;
+  @media (max-width:480px) {
+    width: 320px;
+  }
+}
+
+.header{
+  height: 40px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.header span{
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #F4BF4F;
+}
+
+.header span:first-child{
+  background-color: #ED6A5E !important
+}
+
+.header span:last-child{
+  background-color: #61C554 !important;
+}
+
+.contactContainer {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background-color: #181E25;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  @media (max-width:480px) {
+    height: 240px;
+  }
+}
+
+.inputArea {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.inputArea p {
+  color: var(--text-gray);
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+.inputContainer{
+  display: flex;
+  align-items: first baseline;
+  gap: 8px;
+  font-size: 18px;
+  color: var(--text-gray);
+}
+
+.inputContainer span{
+  color: var(--accent-color);
+}
+
+
+.textBox {
+  background: transparent;
+  border: 0px;
+  color: var(--text-gray);
+  font-size: 18px;
+  width: 640px;
+   @media (max-width:480px) {
+    width: 280px;
+    height: 260px;
+  }
+}
+
+.textBox:focus{
+  outline: none;
+}
+
+.button{
+  border-radius: 4px;
+  color: #181E25;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--text-gray);
+  font-size: 16px;
+  padding: 8px 20px;
+  border: none;
+  align-self: flex-end;
+  cursor: pointer;
+  margin: 12px;
+
+  @media (max-width:480px) {
+    padding: 8px 10px;
+  }
+}
+
+.button:hover{
+  background-color: var(--text-gray);
+  opacity: 50%;  
+}

@@ -2,6 +2,9 @@
   padding: 40px clamp(1rem, 12vw, 15rem);
   background-repeat: no-repeat;
   background-size: 100%;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
   
   @media (max-width: 480px) {
     padding: 20px 16px;

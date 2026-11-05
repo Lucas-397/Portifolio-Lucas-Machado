@@ -3,6 +3,7 @@
   --accent-color: #8C1C1C;
   --bg-color: #000;
   --bg-alt: #1e1e1e;
+  --text-gray: #9e9e9e;
   color: var(--bg-color);
 }
 
