@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import SectionContainer from "../../ui/container/SectionContainer";
 import styles from './contact.module.css';
+import ErrorMsg from "../../ui/ErrorMsg/ErrorMsg";
 
 interface ContactProps{
   color?: string
@@ -14,25 +15,16 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
   const [emailMessage, setEmailMessage] = useState('');
   const messageInputRef= useRef<HTMLTextAreaElement>(null);
   
-  const [showInputs, setShowInput] = useState(false);
   const [showSecondField, setShowField] = useState(false);
 
-  const initForm = () => {
-    setShowInput(true);
-    controSearchBar();
-  }
-
-  const controSearchBar = () => {
-    const emailInput = document.getElementById('email');
-    
-    emailInput?.addEventListener('keydown', event => {
-      if (event.key === 'Enter') {
-        event.preventDefault(); // Impede a quebra de linha padrão do textarea
-        setShowField(true);
-        return;
-      }
-    });
-  }
+  const emailInput = document.getElementById('email');
+  emailInput?.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Impede a quebra de linha padrão do textarea
+      setShowField(true);
+      return;
+    }
+  });
 
   const validateMail = () => {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -41,25 +33,16 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
 
   useEffect(()=> {
     function controlInputFocus(){
-      if(showInputs){
         if(showSecondField && validateMail()){
           messageInputRef.current!.focus();
           return
         }
         adressInputRef.current!.focus();
       }
-    }
-
+      
     controlInputFocus();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[showInputs, showSecondField])
-
-
-  useEffect(()=>{
-    if(showInputs){
-      controSearchBar();
-    }
-  },[showInputs])
+  },[showSecondField])
   
   const [status, setStatus] = useState('');
 
@@ -89,8 +72,11 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
 
   return (
     <SectionContainer color={color}>
-      <h2 className={styles.title}>Contato</h2>
+      <div className={styles.title}>
+        <h2>Contato</h2>
+        <p id="default-text">Gostou do meu trabalho? Que tal me enviar um email</p>
 
+      </div>
         <div className={styles.contactBox}>
           <div className={styles.header}>
             <span></span>
@@ -99,10 +85,8 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
           </div>
           <div className={styles.contactContainer}>
             <div className={styles.inputArea} onClick={()=> initForm()}>
-            {showInputs?
-              <>
                 <div id="first-step" className={styles.inputContainer}>
-                  <label htmlFor="input">Insira o email:<span> ~$</span></label>
+                  <label htmlFor="input">Seu email:<span> ~$</span></label>
                   <textarea
                     ref={adressInputRef}
                     id="email"
@@ -115,11 +99,10 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
                   />
                 </div>
 
-                {
-                showSecondField?  
+                {showSecondField?  
                   validateMail()?
                     <div id="second-step" className={styles.inputContainer}>
-                      <label htmlFor="messageInput">Insira a mensagem:<span> ~$</span></label>
+                      <label htmlFor="messageInput">Sua mensagem:<span> ~$</span></label>
                       <textarea
                         ref={messageInputRef}
                         id="message"
@@ -131,11 +114,9 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
                         required
                       />
                     </div>
-                    :"deu ruim"
+                    :<ErrorMsg message={"Email Invalido"}/>
                 :""
                 }
-              </>:<p id="default-text">Gostou do meu trabalho? Que tal me enviar um email</p>
-            }
             </div>
             {emailMessage !== ""? 
             <button onClick={() => handleSubmit()} className={styles.button}>Enviar Email</button>
