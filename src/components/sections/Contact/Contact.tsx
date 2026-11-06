@@ -19,15 +19,17 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
 
   const initForm = () => {
     setShowInput(true);
+    controSearchBar();
+  }
 
+  const controSearchBar = () => {
     const emailInput = document.getElementById('email');
     
-    if(!emailInput) return
-    
-    emailInput.addEventListener('keydown', function(event) {
+    emailInput?.addEventListener('keydown', event => {
       if (event.key === 'Enter') {
         event.preventDefault(); // Impede a quebra de linha padrão do textarea
         setShowField(true);
+        return;
       }
     });
   }
@@ -37,11 +39,11 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
     return regex.test(emailAdress);
   };
 
-   useEffect(()=> {
+  useEffect(()=> {
     function controlInputFocus(){
       if(showInputs){
         if(showSecondField && validateMail()){
-          messageInputRef.current?.focus();
+          messageInputRef.current!.focus();
           return
         }
         adressInputRef.current!.focus();
@@ -49,7 +51,15 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
     }
 
     controlInputFocus();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   },[showInputs, showSecondField])
+
+
+  useEffect(()=>{
+    if(showInputs){
+      controSearchBar();
+    }
+  },[showInputs])
   
   const [status, setStatus] = useState('');
 
@@ -99,7 +109,7 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
                     name="input"
                     className={styles.textBox}
                     value={emailAdress}
-                    onChange={(e) => setEmailAdress(e.target.value)}
+                    onChange={(e) => setEmailAdress(e.target.value.toLowerCase().trim())}
                     required
                     rows={1}
                   />
