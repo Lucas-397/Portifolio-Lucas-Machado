@@ -1,0 +1,6 @@
+.text{
+  color: var(--white-text) !important;
+  background-color: red;
+  padding: 4px 12px;
+  border-radius: 16px;
+}
