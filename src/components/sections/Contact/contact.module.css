@@ -10,7 +10,7 @@
   padding: 12px 10px;
   align-self: center;
   @media (max-width:480px) {
-    width: 320px;
+    width: 360px;
   }
 }
 
@@ -27,6 +27,10 @@
   height: 16px;
   border-radius: 50%;
   background-color: #F4BF4F;
+  @media (max-width:480px) {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 .header span:first-child{
@@ -47,7 +51,7 @@
   justify-content: space-between;
   align-items: start;
   @media (max-width:480px) {
-    height: 240px;
+    height: 260px;
   }
 }
 
@@ -55,12 +59,17 @@
   display: flex;
   flex-direction: column;
   align-items: start;
+  margin: 8px 0 0 8px;
+  @media (max-width:480px) {
+    margin: 4px 0 0 4px;
+  }
 }
 
 .inputArea p {
   color: var(--text-gray);
   font-size: 18px;
   margin-top: 8px;
+  text-align: start;
 }
 
 .inputContainer{
@@ -69,6 +78,9 @@
   gap: 8px;
   font-size: 18px;
   color: var(--text-gray);
+  @media (max-width:480px) {
+    font-size: 16px;    
+  }
 }
 
 .inputContainer span{
@@ -81,10 +93,10 @@
   border: 0px;
   color: var(--text-gray);
   font-size: 18px;
-  width: 640px;
+  width: 700px;
    @media (max-width:480px) {
-    width: 280px;
-    height: 260px;
+    width: 232px;
+    font-size: 14px;
   }
 }
 
@@ -103,9 +115,9 @@
   align-self: flex-end;
   cursor: pointer;
   margin: 12px;
-
   @media (max-width:480px) {
     padding: 8px 10px;
+    font-size: 12px;
   }
 }
 
