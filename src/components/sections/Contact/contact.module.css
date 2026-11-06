@@ -1,5 +1,9 @@
 .title{
   margin-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
 }
 
 .contactBox{
@@ -93,9 +97,9 @@
   border: 0px;
   color: var(--text-gray);
   font-size: 18px;
-  width: 700px;
+  width: 660px;
    @media (max-width:480px) {
-    width: 232px;
+    width: 210px;
     font-size: 14px;
   }
 }
