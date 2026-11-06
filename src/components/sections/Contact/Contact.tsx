@@ -15,8 +15,6 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
   const [emailMessage, setEmailMessage] = useState('');
   const messageInputRef= useRef<HTMLTextAreaElement>(null);
   
-  const [showSecondField, setShowField] = useState(false);
-  
   const [status, setStatus] = useState('');
 
   const handleSubmit = async () => {
@@ -45,12 +43,9 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
 
   const emailInput = document.getElementById('email');
   emailInput?.addEventListener('keydown', event => {
-    if (event.key === 'Enter') {
-      event.preventDefault(); // Impede a quebra de linha padrão do textarea
       validateMail();
-      setShowField(true);
+      if(event.key === "enter") event.preventDefault();
       return;
-    }
   });
 
   function controlEmailSent(){
@@ -73,7 +68,7 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
 
   useEffect(()=> {
     function controlInputFocus(){
-        if(showSecondField && isEmailValid){
+        if(isEmailValid){ 
           messageInputRef.current?.focus();
           controlEmailSent();
           return
@@ -83,7 +78,7 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
       
     controlInputFocus();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[showSecondField, isEmailValid])
+  },[isEmailValid])
 
   return (
     <SectionContainer color={color}>
@@ -114,8 +109,7 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
                   />
                 </div>
 
-                {showSecondField?  
-                  isEmailValid?
+                {isEmailValid?
                     <div id="second-step" className={styles.inputContainer}>
                       <label htmlFor="messageInput">Sua mensagem:<span>~$</span></label>
                       <textarea
@@ -130,7 +124,6 @@ export default function  ContactSection ({color="#000"}:ContactProps) {
                       />
                     </div>
                     :<ErrorMsg message={"Email Invalido"}/>
-                :""
                 }
             </div>
             {emailMessage !== ""? 
